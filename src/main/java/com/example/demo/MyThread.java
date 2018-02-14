@@ -53,7 +53,21 @@ public class MyThread extends Thread {
 
     // interrupt()方法，用于中断线程或者查询线程是否已经被中断
 
-    // wait()方法，
+    // wait()方法，让当前线程等待，直到其他线程调用notify()或者notifyAll()方法; 当前线程必须拥有这个对象的监视器（锁）
+    // 线程释放监视器，直到其他线程调用notify()或者notifyAll()方法；
+    // 注意，wait()方法必须在循环中调用, 否则无法重新执行...
+    // synchronized (obj) {
+    // while (condition does not hold)
+    //     obj.wait();
+    //     // Perform action appropriate to condition
+    // }
 
-    // join()方法，
+    // join()方法，等待指定时间，让当前线程死掉...
+    // 大多数平台类库的可阻塞方法，都定义了限时版本和不限时版本，例如：
+    // Thread.join() 限时
+    // Thread.wait() 不限时
+    // BlockingQueue.put() 不限时，等待直到队列可以插入元素
+    // BlockingQueue.offer() 限时，超时则放弃
+    // CountDownLatch.await() 有两种签名，带参数的是限时版本，不带参数的是不限时版本
+    // Selector.select()
 }
