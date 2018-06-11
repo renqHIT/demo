@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.concurrency;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
